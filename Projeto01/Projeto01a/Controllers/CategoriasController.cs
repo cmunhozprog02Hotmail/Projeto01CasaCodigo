@@ -66,5 +66,11 @@ namespace Projeto01a.Controllers
             categorias[categorias.IndexOf(categorias.Where(c => c.CategoriaId == categoria.CategoriaId).First())] = categoria;
             return RedirectToAction("Index");
         }
+
+        // GET: Details
+        public ActionResult Details(long id)
+        {
+            return View(categorias.Where(m => m.CategoriaId == id).First());
+        }
     }
 }
