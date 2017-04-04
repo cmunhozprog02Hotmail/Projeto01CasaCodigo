@@ -72,5 +72,20 @@ namespace Projeto01a.Controllers
         {
             return View(categorias.Where(m => m.CategoriaId == id).First());
         }
+
+        // GET: Delete
+        public ActionResult Delete(long id)
+        {
+            return View(categorias.Where(m => m.CategoriaId == id).First());
+        }
+
+        // POST: Delete
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(Categoria categoria)
+        {
+            categorias.Remove(categorias.Where(c => c.CategoriaId == categoria.CategoriaId).First());
+            return RedirectToAction("Index");
+        }
     }
 }
