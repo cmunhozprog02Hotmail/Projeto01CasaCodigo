@@ -2,6 +2,8 @@
 using System.Web.Mvc;
 using Projeto01a.Contexts;
 using Projeto01a.Models;
+using System.Net;
+using System.Data.Entity;
 
 namespace Projeto01a.Controllers
 {
@@ -30,5 +32,36 @@ namespace Projeto01a.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        // GET: Fabricantes/Edit
+        public ActionResult Edit(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Fabricante fabricante = context.Fabricantes.Find(id);
+            if (fabricante == null)
+            {
+                return HttpNotFound();
+            }
+            return View(fabricante);
+        }
+
+        // POST: Frabricantes/Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Fabricante fabricante)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Entry(fabricante).State = EntityState.Modified;
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(fabricante);
+        }
+
+
     }
 }
