@@ -10,6 +10,7 @@
     <title>@ViewBag.Title</title>
     <link href="@Url.Content("~/content/bootstrap.css")"
           rel="stylesheet" />
+    @RenderSection("styles", false)
 </head>
 <body>
     <body>
@@ -50,6 +51,8 @@
         </div>
         <script src="@Url.Content("~/scripts/jquery-1.10.2.js")"></script>
         <script src="@Url.Content("~/scripts/bootstrap.js")"></script>
+
+        @RenderSection("ScriptPage", false)
        
     </body>
 </html>
