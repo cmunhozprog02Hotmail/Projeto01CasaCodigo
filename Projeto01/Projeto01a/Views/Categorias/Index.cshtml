@@ -56,7 +56,9 @@
     <script src="@Url.Content("~/scripts/DataTables/dataTables.boostrap.js")"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $('.table').dataTable({"order": [[1, "asc"]]});
+            $('.table').dataTable({ "order": [[1, "asc"]] });
+            $('li').removeClass("active");
+            $('#liCategorias').addClass("active");
         });
     </script>
 }
