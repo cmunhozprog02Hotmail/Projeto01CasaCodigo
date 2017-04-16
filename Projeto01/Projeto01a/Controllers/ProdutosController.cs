@@ -27,7 +27,8 @@ namespace Projeto01a.Controllers
         // GET: Produtos/Create
         public ActionResult Create()
         {
-            return View();
+            ViewBag.CategoriaId = new SelectList(context.Categorias.OrderBy(b => b.Nome), "CategoriaId", "Nome");
+            
         }
 
         // POST: Produtos/Create
