@@ -1,6 +1,5 @@
 ﻿using Projeto01a.Contexts;
 using Projeto01a.Models;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
