@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<Projeto01a.Models.Produto>
 
 @{
+    
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Listagem de PRODUTOS";
 }
@@ -55,12 +56,15 @@
 </div>
 
 @section styles{
-    <link href="@Url.Content("~/content/DataTables/css/datatables.boostrap.css")" rel="stylesheet" />
+    
+    <link href="@Url.Content("~/Content/DataTables/css/dataTables.bootstrap.css")" rel="stylesheet" />
 }
 
 @section ScriptPage{
-    <script src="@Url.Content("~/scripts/DataTables/jquery.dataTables.js")"></script>
+    
+    <script src="@Url.Content("~/Scripts/DataTables/jquery.dataTables.js")"></script>
     <script src="@Url.Content("~/scripts/DataTables/dataTables.boostrap.js")"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('.table').dataTable({ "order": [[1, "asc"]] });
