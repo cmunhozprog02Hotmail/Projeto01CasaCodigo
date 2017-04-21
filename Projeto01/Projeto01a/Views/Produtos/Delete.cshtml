@@ -1,13 +1,12 @@
 ﻿@model Projeto01a.Models.Produto
-
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Visualizando detalhes de um PRODUTO";
+    ViewBag.Title = "Excluindo um PRODUTO";
 }
 
 <div class="panel panel-primary">
     <div class="panel-heading">
-        Visualizando detalhes de um PRODUTO
+        Visulaizando detalhes do PRODUTO a ser removido
     </div>
     <div class="panel-body">
         <div class="form-group">
@@ -40,15 +39,45 @@
                 @Html.EditorFor(model => model.Fabricante.Nome, new { htmlAttributes = new { @class = "form-control", disabled = "disables" } })
             </div>
         </div>
-        
     </div>
-    <div class="panel-footer panel-info">
-        @Html.ActionLink("Alterar", "Edit", new { id = Model.ProdutoId }, new { @class = "btn btn-info" })
+    <div class="panel-footer">
+        <a href="#" class="btn btn-info" data-toggle="modal" data-target="#deleteConfirmationModal">Remover</a>
         @Html.ActionLink("Retornar para a listagem", "Index", null, new { @class = "btn btn-info" })
     </div>
 </div>
-@section ScriptPage{
 
+<div class="modal fade" id="deleteConfirmationModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-ELTEismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Confirmação de exclusão de PRODUTO</h4>
+            </div>
+            <div class="modal-body">
+                <p>Você está prestes a remover o produto @Model.Nome.ToUpper() do cadastro.</p>
+                <p>
+                    <strong>Você está certo que deseja prosseguir?</strong>
+                </p>
+                @using (Html.BeginForm("Delete", "Produtos", FormMethod.Post, new { @id = "delete-form", role = "form" }))
+            {
+                    @Html.HiddenFor(m => m.ProdutoId)
+                    @Html.AntiForgeryToken()
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        onclick="$('#delete-form').submit();">
+                    Sim, exclua este produto.
+                </button>
+                <button type="button" class="btn btn-primary" data-dismis="modal">
+                    Não, não exclua este produto.
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section ScriptPage{
     <script type="text/javascript">
             $(document).ready(function () {
                 $('li').removeClass("active");
