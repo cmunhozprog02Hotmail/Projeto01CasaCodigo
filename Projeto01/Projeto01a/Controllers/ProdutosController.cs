@@ -95,9 +95,20 @@ namespace Projeto01a.Controllers
         }
 
         // GET: Produtos/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(long? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Produto produto = context.Produtos.Find(id);
+            if (produto == null)
+            {
+                return HttpNotFound();
+            }
+            
+            return View(produto);
         }
 
         // POST: Produtos/Delete/5
