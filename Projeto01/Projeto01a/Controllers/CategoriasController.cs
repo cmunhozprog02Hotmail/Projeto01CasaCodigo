@@ -1,5 +1,4 @@
 ﻿using Modelo.Cadastros;
-using Projeto01a.Contexts;
 
 using System.Data.Entity;
 using System.Linq;
