@@ -1,17 +1,15 @@
-﻿
+﻿using Projeto01a.Contexts;
 using System.Linq;
 using System.Web.Mvc;
 using System.Data.Entity;
-
+using Projeto01a.Models;
 using System.Net;
-using Modelo.Cadastros;
-using Persistencia.Contexts;
 
 namespace Projeto01a.Controllers
 {
     public class ProdutosController : Controller
     {
-        private Persistencia.Contexts.EFContext context = new EFContext();
+        private EFContext context = new EFContext();
         // GET: Produtos
         public ActionResult Index()
         {

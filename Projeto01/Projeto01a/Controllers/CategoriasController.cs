@@ -1,10 +1,9 @@
-﻿using Modelo.Cadastros;
-using Persistencia.Contexts;
+﻿using Projeto01a.Contexts;
+using Projeto01a.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using System.Xml.Linq;
 
 namespace Projeto01a.Controllers
 {

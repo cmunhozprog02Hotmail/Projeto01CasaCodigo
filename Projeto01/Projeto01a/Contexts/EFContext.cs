@@ -1,10 +1,8 @@
-﻿
-using Modelo.Cadastros;
-
+﻿using Projeto01a.Models;
 using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace Persistencia.Contexts
+
+namespace Projeto01a.Contexts
 {
     public class EFContext : DbContext
     {
@@ -14,12 +12,5 @@ namespace Persistencia.Contexts
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Fabricante> Fabricantes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-        }
     }
-    
 }

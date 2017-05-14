@@ -1,7 +1,6 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Modelo.Cadastros
+namespace Projeto01a.Models
 {
     public class Categoria
     {

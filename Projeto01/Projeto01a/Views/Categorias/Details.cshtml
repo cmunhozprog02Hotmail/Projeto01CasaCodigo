@@ -1,4 +1,4 @@
-﻿@model Modelo.Tabelas.Categoria
+﻿@model Projeto01a.Models.Categoria
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -26,7 +26,7 @@
         @Html.ActionLink("Retornar para a listagem", "Index", null, new { @class = "btn btn-info"})
     </div>
 </div>
-@Html.Partial("~/Views/Produtos/_PorCategoria.cshtml", Model.ToList())
+@Html.Partial("~/Views/Produtos/_PorCategoria.cshtml", Model.Produtos.ToList())
 @section ScriptPage{
     
     <script type="text/javascript">
