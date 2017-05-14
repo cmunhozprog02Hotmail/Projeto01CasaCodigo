@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Persistencia.DAL.Cadastros
 {
-    class ProdutoDAL
+    public class ProdutoDAL
     {
         private EFContext context = new EFContext();
 
