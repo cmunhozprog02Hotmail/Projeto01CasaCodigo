@@ -2,8 +2,9 @@
 using System.Linq;
 using System.Web.Mvc;
 using System.Data.Entity;
-using Projeto01a.Models;
+
 using System.Net;
+using Modelo.Cadastros;
 
 namespace Projeto01a.Controllers
 {

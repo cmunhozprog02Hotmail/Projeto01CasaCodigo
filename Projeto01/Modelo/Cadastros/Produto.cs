@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 
-namespace Projeto01a.Models
+namespace Modelo.Cadastros
 {
     public class Produto
     {

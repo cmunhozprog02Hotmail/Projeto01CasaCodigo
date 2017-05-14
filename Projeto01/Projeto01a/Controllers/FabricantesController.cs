@@ -1,9 +1,10 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using Projeto01a.Contexts;
-using Projeto01a.Models;
+
 using System.Net;
 using System.Data.Entity;
+using Modelo.Cadastros;
 
 namespace Projeto01a.Controllers
 {
