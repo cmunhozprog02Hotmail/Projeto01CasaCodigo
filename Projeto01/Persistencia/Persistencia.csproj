@@ -54,6 +54,11 @@
     <Compile Include="DAL\Cadastros\CategoriaDAL.cs" />
     <Compile Include="DAL\Cadastros\FabricanteDAL.cs" />
     <Compile Include="DAL\Cadastros\ProdutoDAL.cs" />
+    <Compile Include="Migrations\201705142114290_InitialCreate.cs" />
+    <Compile Include="Migrations\201705142114290_InitialCreate.Designer.cs">
+      <DependentUpon>201705142114290_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -68,6 +73,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\Tabelas\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705142114290_InitialCreate.resx">
+      <DependentUpon>201705142114290_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

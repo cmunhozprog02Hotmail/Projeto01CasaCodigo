@@ -12,8 +12,7 @@ namespace Persistencia.DAL.Cadastros
     public class FabricanteDAL
     {
         private EFContext context = new EFContext();
-        public IQueryable<Fabricante>
-        ObterCategoriasClassificadasPorNome()
+        public IQueryable<Fabricante>ObterFabricantesClassificadasPorNome()
         {
             return context.Fabricantes.OrderBy(b => b.Nome);
         }

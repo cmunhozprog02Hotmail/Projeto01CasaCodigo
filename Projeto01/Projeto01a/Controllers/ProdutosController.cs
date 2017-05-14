@@ -1,8 +1,4 @@
-﻿
-using System.Linq;
-using System.Web.Mvc;
-using System.Data.Entity;
-
+﻿using System.Web.Mvc;
 using System.Net;
 using Modelo.Cadastros;
 using Servico.Cadastros;
@@ -15,6 +11,7 @@ namespace Projeto01a.Controllers
         private ProdutoServico produtoServico = new ProdutoServico();
         private CategoriaServico categoriaServico = new CategoriaServico();
         private FabricanteServico fabricateServico = new FabricanteServico();
+
         // GET: Produtos
         public ActionResult Index()
         {
@@ -54,12 +51,12 @@ namespace Projeto01a.Controllers
             if (produto == null)
             {
                 ViewBag.CategoriaId = new SelectList(categoriaServico.ObterCategoriasClassificadasPorNome(), "CategoriaId", "Nome");
-                ViewBag.FabricanteId = new SelectList(fabricateServico.ObterCategoriasClassificadasPorNome(), "FabricanteId", "Nome");
+                ViewBag.FabricanteId = new SelectList(fabricateServico.ObterFabricantePorNome(), "FabricanteId", "Nome");
             }
             else
             {
                 ViewBag.CategoriaId = new SelectList(categoriaServico.ObterCategoriasClassificadasPorNome(), "CategoriaId", "Nome", produto.CategoriaId);
-                ViewBag.FabricanteId = new SelectList(fabricateServico.ObterCategoriasClassificadasPorNome(), "FabricanteId", "Nome", produto.FabricanteId);
+                ViewBag.FabricanteId = new SelectList(fabricateServico.ObterFabricantePorNome(), "FabricanteId", "Nome", produto.FabricanteId);
             }
         }
         

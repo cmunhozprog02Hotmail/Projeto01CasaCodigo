@@ -8,9 +8,9 @@ namespace Servico.Cadastros
     {
         private FabricanteDAL fabricanteDAL = new  FabricanteDAL();
 
-        public IQueryable<Fabricante>ObterCategoriasClassificadasPorNome()
+        public IQueryable<Fabricante>ObterFabricantePorNome()
         {
-            return fabricanteDAL.ObterCategoriasClassificadasPorNome();
+            return fabricanteDAL.ObterFabricantesClassificadasPorNome();
         }
 
         public Fabricante ObterFabricantePorId(long id)
@@ -18,7 +18,7 @@ namespace Servico.Cadastros
             return fabricanteDAL.ObterFabricantePorId(id);
         }
 
-        public void GravarFabricante(Categoria categoria)
+        public void GravarFabricante(Fabricante fabricante)
         {
             fabricanteDAL.GravarFabricante(fabricante);
         }
