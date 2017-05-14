@@ -424,10 +424,12 @@
       <Project>{33b2a10d-98fc-4b44-a3ff-5074ac79457c}</Project>
       <Name>Modelo</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Servico\Servico.csproj">
+      <Project>{B24CF83B-C80B-4C87-984C-5C8910E017C5}</Project>
+      <Name>Servico</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
