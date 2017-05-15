@@ -13,18 +13,19 @@ namespace Modelo.Cadastros
         [DisplayName("Id")]
         public long? ProdutoId { get; set; }
 
-        [StringLength(100, ErrorMessage = "O nome do produto precisar conter no mínimo 10 caracteres")]
+        [StringLength(100, 
+            ErrorMessage = "O nome do produto precisar conter no mínimo 10 caracteres",
+            MinimumLength = 10)]
         [Required(ErrorMessage ="Informe o nome do produto")]
         public string Nome { get; set; }
 
-        [DisplayName("Data de Cadastro")]
-        [Required(ErrorMessage = "Informe a data de cadastro do produto")]
+        [DisplayName("Categoria")]
         public long? CategoriaId { get; set; }
 
-        [DisplayName("Categoria")]
+        [DisplayName("Fabricante")]
         public long? FabricanteId { get; set; }
 
-        [DisplayName("Fabricante")]
+        
         public Categoria Categoria { get; set; }
         public Fabricante Fabricante { get; set; }
     }

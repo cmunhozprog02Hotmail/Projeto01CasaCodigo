@@ -29,6 +29,7 @@ namespace Projeto01a.Controllers
             {
                 return HttpNotFound();
             }
+            PopularViewBag();
             return View(produto);
         }
 
@@ -87,6 +88,7 @@ namespace Projeto01a.Controllers
                     produtoServico.GravarProduto(produto);
                     return RedirectToAction("Index");
                 }
+                PopularViewBag();
                 return View(produto);
 
             }
