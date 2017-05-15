@@ -29,12 +29,20 @@ namespace Projeto01a.Controllers
             return View(categoria);
         }
 
+        // GET: Edit
+        public ActionResult Edit(long? id)
+        {
+            return ObterCategoriaPorId(id);
+        }
+
         // GET: Details
 
         public ActionResult Details(long? id)
         {
             return ObterCategoriaPorId(id);
         }
+
+
 
         // GET: Delete
         public ActionResult Delete(long? id)

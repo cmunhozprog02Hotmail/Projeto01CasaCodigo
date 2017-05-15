@@ -10,7 +10,7 @@ namespace Projeto01a.Controllers
         // Declaração dos Serviços
         private ProdutoServico produtoServico = new ProdutoServico();
         private CategoriaServico categoriaServico = new CategoriaServico();
-        private FabricanteServico fabricateServico = new FabricanteServico();
+        private FabricanteServico fabricanteServico = new FabricanteServico();
 
         // GET: Produtos
         public ActionResult Index()
@@ -32,6 +32,13 @@ namespace Projeto01a.Controllers
             return View(produto);
         }
 
+        //GET: Edit
+        public ActionResult Edit(long? id)
+        {
+            PopularViewBag();
+            return ObterVisaoProdutoPorId(id);
+        }
+
         // GET: Details
         
         public ActionResult Details(long? id)
@@ -39,11 +46,13 @@ namespace Projeto01a.Controllers
             return ObterVisaoProdutoPorId(id);
         }
         
+        /*
         // GET: Delete
         public ActionResult Delete(long? id)
         {
             return ObterVisaoProdutoPorId(id);
         }
+        */
 
         //Popular DropList
         private void PopularViewBag(Produto produto = null)
@@ -51,12 +60,12 @@ namespace Projeto01a.Controllers
             if (produto == null)
             {
                 ViewBag.CategoriaId = new SelectList(categoriaServico.ObterCategoriasClassificadasPorNome(), "CategoriaId", "Nome");
-                ViewBag.FabricanteId = new SelectList(fabricateServico.ObterFabricantePorNome(), "FabricanteId", "Nome");
+                ViewBag.FabricanteId = new SelectList(fabricanteServico.ObterFabricantePorNome(), "FabricanteId", "Nome");
             }
             else
             {
                 ViewBag.CategoriaId = new SelectList(categoriaServico.ObterCategoriasClassificadasPorNome(), "CategoriaId", "Nome", produto.CategoriaId);
-                ViewBag.FabricanteId = new SelectList(fabricateServico.ObterFabricantePorNome(), "FabricanteId", "Nome", produto.FabricanteId);
+                ViewBag.FabricanteId = new SelectList(fabricanteServico.ObterFabricantePorNome(), "FabricanteId", "Nome", produto.FabricanteId);
             }
         }
         

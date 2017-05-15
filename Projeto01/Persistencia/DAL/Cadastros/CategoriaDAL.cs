@@ -23,7 +23,7 @@ namespace Persistencia.DAL.Cadastros
         // Salvar Registros - Edit e Create
         public void GravarCategoria(Categoria categoria)
         {
-            if (categoria == null)
+            if (categoria.CategoriaId == null)
             {
                 context.Categorias.Add(categoria);
             }

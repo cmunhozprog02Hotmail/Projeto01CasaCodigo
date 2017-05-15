@@ -1,11 +1,7 @@
 ﻿using Modelo.Cadastros;
 using Persistencia.Contexts;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Persistencia.DAL.Cadastros
 {
@@ -25,17 +21,19 @@ namespace Persistencia.DAL.Cadastros
 
         // Salvar Registros - Edit e Create
         public void GravarFabricante(Fabricante fabricante)
-        {
-            if (fabricante == null)
+        { 
+            if (fabricante.FabricanteId == null)
             {
                 context.Fabricantes.Add(fabricante);
             }
             else
             {
-                context.Entry(fabricante).State =
-                EntityState.Modified;
+                context.Entry(fabricante).State = EntityState.Modified;
+                
             }
             context.SaveChanges();
+            
+            
         }
 
         // Deletar

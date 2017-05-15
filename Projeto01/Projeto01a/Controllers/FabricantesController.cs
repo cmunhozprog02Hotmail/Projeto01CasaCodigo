@@ -1,9 +1,5 @@
-﻿using System.Linq;
-using System.Web.Mvc;
-
-
+﻿using System.Web.Mvc;
 using System.Net;
-using System.Data.Entity;
 using Modelo.Cadastros;
 using Servico.Cadastros;
 
@@ -11,6 +7,8 @@ namespace Projeto01a.Controllers
 {
     public class FabricantesController : Controller
     {
+        private ProdutoServico produtoServico = new ProdutoServico();
+        private CategoriaServico categoriaServico = new CategoriaServico();
         private FabricanteServico fabricanteServico = new FabricanteServico();
 
         // GET: listar nomes por ordem alfabetica 
@@ -36,6 +34,12 @@ namespace Projeto01a.Controllers
         // GET: Details
 
         public ActionResult Details(long? id)
+        {
+            return ObterFabricantePorId(id);
+        }
+
+        // GET: Edit
+        public ActionResult Edit(long? id)
         {
             return ObterFabricantePorId(id);
         }
@@ -74,6 +78,7 @@ namespace Projeto01a.Controllers
 
         // POST: Create 
         [HttpPost]
+        
         public ActionResult Create(Fabricante fabricante)
         {
             return GravarFabricante(fabricante);
@@ -81,6 +86,7 @@ namespace Projeto01a.Controllers
 
         // POST: Edit 
         [HttpPost]
+        
         public ActionResult Edit(Fabricante fabricante)
         {
             return GravarFabricante(fabricante);
