@@ -3,7 +3,7 @@ using Servico.Cadastros;
 using System.Net;
 using System.Web.Mvc;
 
-namespace Projeto01a.Controllers
+namespace Projeto01a.Areas.Tabelas.Controllers
 {
     public class CategoriasController : Controller
     {

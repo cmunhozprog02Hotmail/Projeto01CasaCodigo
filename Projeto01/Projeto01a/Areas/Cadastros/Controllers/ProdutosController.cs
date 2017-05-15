@@ -3,7 +3,7 @@ using System.Net;
 using Modelo.Cadastros;
 using Servico.Cadastros;
 
-namespace Projeto01a.Controllers
+namespace Projeto01a.Areas.Cadastros.Controllers
 {
     public class ProdutosController : Controller
     {
